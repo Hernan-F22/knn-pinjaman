@@ -3,10 +3,15 @@ import numpy as np
 import pickle
 import plotly.express as px
 import pandas as pd
+import os
 
 # Load the trained KNN model
-with open('knn_pinjam_mod.pkl', 'rb') as model_file:
-    knn = pickle.load(model_file)
+model_path = 'knn_pinjam_mod.pkl'  # Ganti dengan jalur yang benar jika perlu
+print("Memuat model dari:", os.path.abspath(model_path))
+
+try:
+    with open(model_path, 'rb') as model_file:
+        knn = pickle.load(model_file)
 except FileNotFoundError:
     print("File model tidak ditemukan. Pastikan jalur dan nama file benar.")
 except Exception as e:
