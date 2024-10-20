@@ -5,7 +5,7 @@ import plotly.express as px
 import pandas as pd
 
 # Load the trained KNN model
-with open('knn_pinjam_mod.pkl', 'rb') as model_file:
+with open('path/to/knn_pinjam_mod.pkl', 'rb') as model_file:
     knn = pickle.load(model_file)
 
 # Create a title for the web app
