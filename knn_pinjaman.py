@@ -7,6 +7,10 @@ import pandas as pd
 # Load the trained KNN model
 with open('knn_pinjam_mod.pkl', 'rb') as model_file:
     knn = pickle.load(model_file)
+except FileNotFoundError:
+    print("File model tidak ditemukan. Pastikan jalur dan nama file benar.")
+except Exception as e:
+    print(f"Terjadi kesalahan saat memuat model: {e}")
 
 # Create a title for the web app
 st.title('K-Nearest Neighbor (KNN) Loan Eligibility Predisction')
